@@ -30,7 +30,7 @@
     <server>
       <id>github</id>
       <username>fuping-ma-igt</username>
-      <password>${github.token}</password>
+      <password>${env.GITHUB_TOKEN}</password>
     </server>
   </servers>
 </settings>
