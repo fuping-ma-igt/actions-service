@@ -31,14 +31,6 @@
       <id>github</id>
       <username>fuping-ma-igt</username>
       <password>${github.token}</password>
-      <configuration>
-        <httpHeaders>
-          <property>
-          <name>Authorization</name>
-          <value>Bearer ${github.token}</value>
-          </property>
-        </httpHeaders>
-      </configuration>
     </server>
   </servers>
 </settings>
