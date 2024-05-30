@@ -30,7 +30,7 @@ jobs:
         settings-path: ./.mvn/local-settings.xml # location for the settings.xml file
 
     - name: Build with Maven
-      run: mvn -s ./.mvn/local-settings.xml/settings.xml -B package -Dgithub.token=${{ secrets.GITHUB_TOKEN }} --file pom.xml
+      run: mvn -B package -s ./.mvn/local-settings.xml/settings.xml -Dgithub.token=${{ secrets.GITHUB_TOKEN }} --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s ./.mvn/local-settings.xml/settings.xml
