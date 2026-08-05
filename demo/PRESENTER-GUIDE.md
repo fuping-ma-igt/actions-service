@@ -10,14 +10,18 @@ The most visible comparison is not formatting. It is whether the generated retry
 policy implements the correct failure categories, schedules, API, boundaries, and
 test strategy.
 
-## Why the existing link-only instructions were changed
+## How shared instructions are used
 
-The previous `.github/copilot-instructions.md` contained only web links to two
-shared standards. A link is not a dependable substitute for instruction content:
-the model may not retrieve it, access may require authentication, and the result
-depends on network availability. This demo keeps the important rules short,
-self-contained, and local. The shared documents can still remain the human source
-of truth outside the demo.
+The repository instruction file references the existing shared Java coding and
+unit-test standards instead of duplicating them. The retry policy's API and business
+rules remain local because they are specific to this service and make the A/B result
+measurable.
+
+Before presenting, confirm that Copilot can access the shared GitHub repository in
+the signed-in IDE session. If those links require authentication or are not loaded
+by the selected Copilot surface, attach the two shared instruction files to the chat
+for both runs only when comparing their convention-related effects. Do not attach
+them when the goal is to demonstrate automatic repository instructions.
 
 ## Preparation (before the presentation)
 
@@ -101,7 +105,8 @@ Score each item as pass/fail on screen. The contract verifier checks the first s
    team's domain contract."
 2. **Baseline:** "This is plausible Java, yet plausible is not the same as correct
    for this repository."
-3. **Reveal:** briefly show the instruction file and its project-specific rules.
+3. **Reveal:** briefly show the local business rules and the two shared standards it
+   references.
 4. **Second run:** show the same prompt and the instruction reference.
 5. **Proof:** run the verifier and compare the scorecard.
 6. **Close:** "Instructions are versioned team context. They improve consistency;

@@ -28,28 +28,17 @@ When implementing the retry policy for failed actions, use this exact public API
 - Express retry schedules as named, immutable constants. Do not hide these business
   values in control flow as magic numbers.
 
-## Java conventions
+## Shared engineering conventions
 
-- Use 4 spaces, never tabs, and aim for lines no longer than 80 characters.
-- Use braces for every control-statement body.
-- Do not reassign method parameters.
-- Use one top-level type per file and no wildcard imports.
-- Add useful Javadoc to public types and public methods. Document constraints and
-  behavior instead of restating names.
-- Prefer immutable data and modern Java APIs. Use `Objects.requireNonNull` for the
-  category validation.
+Follow these shared instructions when creating or changing Java source and tests:
 
-## Unit-test conventions
+- [Java Coding Standard](https://github.com/fuping-ma-igt/ai-tools/blob/main/instructions/java-coding-standard.instructions.md)
+- [Java Unit Tests](https://github.com/fuping-ma-igt/ai-tools/blob/main/instructions/java-unit-tests.instructions.md)
 
-- Use JUnit 5 and AssertJ for new tests.
-- Name a test class `[ClassUnderTest]Test`, ending in singular `Test`.
-- Name test methods `[method]_[state]_[expectedBehaviour]`.
-- Use one scenario per test method so a failure identifies the broken behavior.
-- Test the first and last scheduled attempts, the exhausted boundary, both
-  non-retryable categories, zero/negative attempts, and a null category.
-- Test pure domain classes directly. Do not use `@SpringBootTest` or start a Spring
-  context for these unit tests.
-- Do not rewrite an existing, passing test solely to change its style.
+The shared Java unit-test instructions define framework and naming conventions.
+For this feature, also test the first and last scheduled attempts, the exhausted
+boundary, both non-retryable categories, zero and negative attempts, and a null
+category. Test the pure domain policy directly without starting a Spring context.
 
 ## Definition of done
 
